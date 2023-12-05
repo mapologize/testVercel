@@ -1,14 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const home = require("./routes/home");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/home", (req,res) => {
-    res.send('Hello home page!');
-});
+app.use("/home", home);
 
 const port = 9001;
 
